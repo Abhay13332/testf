@@ -125,13 +125,18 @@ const options={
         formData.append("price", price);
         formData.append("imageCount", images.length.toString());
      
+const keepAlive = setInterval(() => {
+  fetch('/ping').catch(() => {});
+}, 30000); // every 30 sec
+
+
        await     axios.post("https://test-7ijo.onrender.com/upload", formData).then((res) => {
               return res
             }).catch(console.error).then(console.log).catch(console.error);
          dref.current.style.display="none";
         // Send this formData to your backend using fetch/axios
         console.log("Images Uploaded:", images.length);
-
+clearInterval(keepAlive);
         // Reset
         setImages([]);
         setDescription("");

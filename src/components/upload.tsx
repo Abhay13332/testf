@@ -125,7 +125,7 @@ const options={
         formData.append("price", price);
         formData.append("imageCount", images.length.toString());
      
-       await     axios.post("https://test-7ijo.onrender.com//upload", formData).then((res) => {
+       await     axios.post("https://test-7ijo.onrender.com/upload", formData).then((res) => {
               return res
             }).catch(console.error).then(console.log).catch(console.error);
          dref.current.style.display="none";

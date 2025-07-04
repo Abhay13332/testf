@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Search, User, Heart, ShoppingBag, Shirt, Home, TrainFrontTunnel} from 'lucide-react';
 import {useTranslation} from "react-i18next";
 import {NavLink} from "react-router";
+import UploadForm from './upload';
 
 
 const Header_control: React.FC = () => {
@@ -51,7 +52,7 @@ navbar=navbar.map((item)=>t(item));
                                 <Heart className="w-5 h-5" />
                             </button>
                             <button className="p-2 text-gray-700 hover:text-gray-900 transition-colors">
-                                <User className="w-5 h-5" />
+                           <NavLink to={"/upload"}>     <User className="w-5 h-5" /></NavLink>
                             </button>
                             <button className="p-2 text-gray-700 hover:text-gray-900 transition-colors relative">
                                 <ShoppingBag className="w-5 h-5" />
